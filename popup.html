@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      padding: 12px;
+      margin: 0;
+      min-width: 320px;
+      color: #e0e0e0;
+      background: #1e1e2e;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: #cdd6f4;
+    }
+    .platform {
+      margin-bottom: 10px;
+    }
+    label {
+      font-size: 11px;
+      color: #a6adc8;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .cmd-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    code {
+      flex: 1;
+      background: #313244;
+      padding: 6px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      display: block;
+      white-space: nowrap;
+      overflow-x: auto;
+      color: #a6e3a1;
+    }
+    button {
+      background: #45475a;
+      border: none;
+      color: #cdd6f4;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    button:hover {
+      background: #585b70;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #a6adc8;
+    }
+  </style>
+</head>
+<body>
+  <h3>Install / Update Fennec</h3>
+
+  <div class="platform" id="unix-section">
+    <label>macOS / Linux</label>
+    <div class="cmd-row">
+      <code id="unix-cmd">curl -fsSL https://raw.githubusercontent.com/tompassarelli/fennec/main/install.sh | bash</code>
+      <button data-target="unix-cmd">Copy</button>
+    </div>
+  </div>
+
+  <div class="platform" id="windows-section">
+    <label>Windows (PowerShell)</label>
+    <div class="cmd-row">
+      <code id="win-cmd">irm https://raw.githubusercontent.com/tompassarelli/fennec/main/install.ps1 | iex</code>
+      <button data-target="win-cmd">Copy</button>
+    </div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
